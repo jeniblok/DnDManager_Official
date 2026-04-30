@@ -2,15 +2,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DnDManager.Models
 {
-    public class Encounter
-  {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Outcome { get; set; }
+    public class LogEntry
+    {
+        public int Id { get; set; }
 
-    public int? SessionLogId { get; set; }
-    public SessionLog? SessionLog { get; set; }
+        [Required]
+        public string Action { get; set; }
 
-    public List<LogEntry> LogEntries { get; set; } = new List<LogEntry>();
+        public int RoundNumber { get; set; }
+
+        public int? DamageOrHealing { get; set; }
+
+        public int EncounterId { get; set; }
+        public Encounter? Encounter { get; set; }
     }
 }
