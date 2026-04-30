@@ -1,6 +1,31 @@
-@{
-    ViewData["Title"] = "Encounters";
+@model DnDManager.Models.Encounter
+
+<h2>Encounter Details</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <p><strong>Outcome:</strong> @Model.Outcome</p>
+</div>
+
+<h3>Log Entries</h3>
+
+@if (Model.LogEntries != null && Model.LogEntries.Any())
+{
+    <ul>
+    @foreach (var log in Model.LogEntries)
+    {
+        <li>
+            Round @log.RoundNumber - @log.Description
+        </li>
+    }
+    </ul>
+}
+else
+{
+    <p>No log entries yet.</p>
 }
 
-<h2>Encounters</h2>
-<p>Coming soon.</p>
+<p>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</p>
