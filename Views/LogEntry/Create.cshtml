@@ -1,6 +1,29 @@
-@{
-    ViewData["Title"] = "Log Entries";
-}
+@model DnDManager.Models.LogEntry
 
-<h2>Log Entries</h2>
-<p>Coming soon.</p>
+<h2>Create Log Entry</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="RoundNumber"></label>
+        <input asp-for="RoundNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DamageOrHealing"></label>
+        <input asp-for="DamageOrHealing" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EncounterId"></label>
+        <input asp-for="EncounterId" class="form-control" />
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
