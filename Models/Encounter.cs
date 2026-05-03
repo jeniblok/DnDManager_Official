@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DnDManager.Models
 {
-    public class LogEntry
+    public class Encounter.cs
     {
         public int Id { get; set; }
 
